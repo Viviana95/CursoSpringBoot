@@ -1,4 +1,4 @@
-package com.exampleCode.demo.rest;
+package com.viviCode.rest;
 
 import java.util.List;
 
@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exampleCode.demo.model.Persona;
-import com.exampleCode.demo.repo.IPersonaRepo;
+import com.viviCode.model.Persona;
+import com.viviCode.repo.IPersonaRepo;
+
+
 
 @RestController
 public class RestDemoController {
+
 	@Autowired
 	private IPersonaRepo repo;
 	
@@ -28,16 +31,11 @@ public class RestDemoController {
 		repo.save(per);
 	}
 	@PutMapping("/person/{id}")
-	public void modificar(@PathVariable Integer id, @RequestBody Persona per) {
+	public void modificar(@PathVariable("id") Integer id, @RequestBody Persona per) {
 		repo.save(per);
 	}
 	@DeleteMapping(value = "person/{id}")
 	public void eliminar(@PathVariable("id") Integer id) {
 		repo.deleteById(id);
 	}
-
-
-
-	
-
 }

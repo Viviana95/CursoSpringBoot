@@ -1,4 +1,4 @@
-package com.exampleCode.demo.model;
+package com.viviCode.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
