@@ -14,7 +14,7 @@ import com.baeldung.boot.jsp.repository.model.BookData;
 @Configuration
 public class SpringBootJspConfiguration {
 
-    @Bean
+    //@Bean
     public BookRepository provideBookRepository() {
         return new InMemoryBookRepository(initialBookData());
     }
